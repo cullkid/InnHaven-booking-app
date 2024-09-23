@@ -46,3 +46,4 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
   clerk link: ('https://clerk.com/')
 
 - lucide: for icons
+  lucide link: ('https://lucide.dev/icons/search')
