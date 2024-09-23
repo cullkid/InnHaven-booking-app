@@ -34,3 +34,15 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## List of extensions used in this project:
+
+- Shadcn/ui: this is used to install all the components we are going to use in this projects
+  shadcn/ui link: ('https://ui.shadcn.com/docs/components/button')
+  list of shadcn/ui components used in this projects are: [Button]
+  Remember, all this components are saved inside the components folder located in the directory when installed, read from the website on how to use all the components
+
+- Clerk: this is use to add authentication into the app
+  clerk link: ('https://clerk.com/')
+
+- lucide: for icons
