@@ -45,5 +45,5 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 - Clerk: this is use to add authentication into the app
   clerk link: ('https://clerk.com/')
 
-- lucide: for icons
+- lucide: for icons.
   lucide link: ('https://lucide.dev/icons/search')
