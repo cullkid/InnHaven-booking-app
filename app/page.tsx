@@ -1,7 +1,14 @@
+import CarouselComponent from "@/components/layout/Caroul";
 import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
-    <div>Home page <Button variant={"secondary"}>Home</Button> </div>
+    <div>
+      <CarouselComponent />
+      <div className=" ">
+        <div>Home page</div>
+        <Button variant={"secondary"}>Home</Button>
+      </div>
+    </div>
   );
 }

@@ -1,4 +1,4 @@
-"use client";
+"user client";
 
 import React from "react";
 

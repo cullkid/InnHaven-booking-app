@@ -47,3 +47,10 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 - lucide: for icons.
   lucide link: ('https://lucide.dev/icons/search')
+
+- react-responsive-carousel: this is used to create the carousel on the homepage.
+  NOTE: the code was paste on chartgpt which translated the code to next js format
+  react-responsive-carousel: ('https://react-responsive-carousel.js.org/')
+
+- Neon: used to host backend database
+  link: ('https://console.neon.tech/app/projects')
