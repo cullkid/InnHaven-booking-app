@@ -24,7 +24,7 @@ export function NavMenu() {
       </DropdownMenuTrigger>
       <div>
         <DropdownMenuContent align="end">
-          <DropdownMenuItem onClick={() => router.push("/hotels/new")}>
+          <DropdownMenuItem onClick={() => router.push("/hotel/new")}>
             <Plus size="15" />
             <span>Add Hotel</span>
           </DropdownMenuItem>

@@ -54,3 +54,16 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 - Neon: used to host backend database
   link: ('https://console.neon.tech/app/projects')
+  NOTE: any time changes is made in the prisma schema this command line should be run:
+
+  1. npx prisma generate = this will generate the new change into the neon database
+  2. npx prisma migrate dev = this will also migrate new changes into the neon database
+
+- zod and react hook form: is used to create the hotel form for the hotel creation
+  link is the same as shancn, just write 'form' on the search bar
+
+- uploadthing: is used to upload our images
+  link: ('https://v6.docs.uploadthing.com/getting-started/appdir')
+
+- country-state-city: is a library used to get all the country data
+  link: ('https://www.npmjs.com/package/country-state-city')

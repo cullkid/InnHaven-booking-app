@@ -43,7 +43,8 @@ const CarouselComponent: React.FC = () => {
             alt="Image 1"
             className="h-[30rem] md:h-[40rem] lg:h-[40rem] filter brightness-50"
           />
-          <div className="flex flex-row gap-2 items-center justify-center top-[14rem] right-[8.50rem]  sm:top-[18rem] sm:right-[20rem] lg:text-5xl lg:top-[18rem] lg:right-[23rem] absolute  border-l-8  border-l-amber-500  rounded-lg pl-1 ">
+
+          <div className="flex flex-row gap-2 items-center justify-center top-[14rem] sm:top-[18rem] lg:text-5xl lg:top-[18rem] lg:right-[23rem] sm:right-[20rem] right-[8.50rem] absolute  border-l-8  border-l-amber-500  rounded-lg pl-1 ">
             <h1 className="m-0 p-0 text-white uppercase text-4xl sm:text-7xl lg:text-9xl tracking-tighter font-black">
               Early
             </h1>
@@ -59,6 +60,7 @@ const CarouselComponent: React.FC = () => {
               </h1>
             </div>
           </div>
+
           <div className="absolute flex items-center justify-center lg:hidden md:hidden top-[22rem] right-[7rem] border-2 border-gray-400 rounded-sm">
             <Search className="relative h-4 w-4 top-[.10rem] left-6 text-muted-foreground" />
             <input

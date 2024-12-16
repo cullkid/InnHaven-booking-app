@@ -16,7 +16,7 @@ export const NavBar = () => {
   const { userId } = useAuth();
 
   return (
-    <div className="relative">
+    <div className="relative border-8">
       <div className="fixed z-10 left-0 right-0 top-0 border border-primary/10 bg-secondary">
         <Container>
           <div className="flex justify-between items-center">
