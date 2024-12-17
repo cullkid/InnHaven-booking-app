@@ -33,7 +33,7 @@ import {
 } from "lucide-react";
 import { Separator } from "../ui/separator";
 import { usePathname, useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "../ui/button";
 import {
   Dialog,
@@ -46,6 +46,10 @@ import {
 import AddRoomForm from "./AddRoomForm";
 import axios from "axios";
 import { useToast } from "@/hooks/use-toast";
+import { DatePickerWithRange } from "./DateRangePicker";
+import { DateRange } from "react-day-picker";
+import { differenceInCalendarDays } from "date-fns";
+import { Checkbox } from "../ui/checkbox";
 
 interface RoomCardProps {
   hotel?: Hotel & {
@@ -63,6 +67,32 @@ const RoomCard = ({ hotel, room, bookings = [] }: RoomCardProps) => {
 
   const [isLoading, setIsLoading] = useState(false);
   const [open, setOpen] = useState(false);
+
+  const [date, setDate] = useState<DateRange | undefined>();
+  const [totalPrice, setTotalPrice] = useState(room.roomPrice);
+  const [addBreakFast, setAddBreakFast] = useState(false);
+  const [days, setDays] = useState(1);
+
+  //calculating the roomPrice by the days of the booked room
+  useEffect(() => {
+    if (date && date.from && date.to) {
+      const dayCount = differenceInCalendarDays(date.to, date.from);
+
+      setDays(dayCount);
+
+      if (dayCount && room.roomPrice) {
+        if (addBreakFast && room.breakFastPrice) {
+          setTotalPrice(
+            dayCount * room.roomPrice + dayCount * room.breakFastPrice
+          );
+        } else {
+          setTotalPrice(dayCount * room.roomPrice);
+        }
+      }
+    } else {
+      setTotalPrice(room.roomPrice);
+    }
+  }, [date, room.roomPrice, addBreakFast]);
 
   //handlle function for the open and close of AddRoomForm
   const handleOpenDialog = () => {
@@ -222,7 +252,30 @@ const RoomCard = ({ hotel, room, bookings = [] }: RoomCardProps) => {
       </CardContent>
       <CardFooter>
         {isHotelDetails ? (
-          <div>Hotel Details Page</div>
+          <div className="flex flex-col">
+            <div className="font-semibold">Pick your booking date</div>
+            <DatePickerWithRange date={date} setDate={setDate} />
+            {room.breakFastPrice > 0 && (
+              <div className="my-5">
+                <div className="font-semibold text-sm">
+                  Do you want breakfast each day?
+                </div>
+                <div className="flex items-center space-x-2 text-xs">
+                  <Checkbox
+                    id="breakFast"
+                    onCheckedChange={(value) => setAddBreakFast(!!value)}
+                  />
+                  <label>Add BreakFast</label>
+                </div>
+              </div>
+            )}
+            <div>
+              <span className="text-sm">Total Price: </span>
+              <span className="font-semibold pr-[0.30rem]">${totalPrice}</span>
+              for <span className="font-semibold">{days} </span>
+              <span className="text-sm">Days</span>
+            </div>
+          </div>
         ) : (
           <div className="flex justify-between gap-[3rem]">
             <Button

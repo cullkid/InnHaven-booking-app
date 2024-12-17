@@ -10,6 +10,7 @@ import { DollarSign, Dumbbell, MapPin, Waves } from "lucide-react";
 import { Container } from "../Container";
 import { AnotherContainer } from "../AnotherContainer";
 import { Button } from "../ui/button";
+import { FaSwimmer } from "react-icons/fa";
 
 const HotelCard = ({ hotel }: { hotel: HotelWithRooms }) => {
   const pathName = usePathname();
@@ -52,7 +53,7 @@ const HotelCard = ({ hotel }: { hotel: HotelWithRooms }) => {
             </RoomAmenity>
             {hotel.swimmingPool && (
               <RoomAmenity>
-                <Waves size={16} />
+                <FaSwimmer size={20} />
                 pool
               </RoomAmenity>
             )}
